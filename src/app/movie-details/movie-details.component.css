@@ -1,0 +1,31 @@
+.movie-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 20px; 
+    padding: 20px;
+  }
+  
+  .movie-info {
+    flex: 1; 
+  }
+  .movie-image {
+    width: 200px; 
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; 
+  }
+  
+  .movie-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 15px;
+  }
+  

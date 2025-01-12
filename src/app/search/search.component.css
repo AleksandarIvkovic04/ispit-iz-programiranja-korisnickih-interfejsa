@@ -1,0 +1,43 @@
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+  }
+  
+  .movie-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .movies-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+  }
+  
+  .movie-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .movie-image {
+    width: 100px; 
+    height: 150px; 
+    object-fit: cover; 
+  }
+  
+  .movie-name {
+    font-size: 16px; 
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-left: 10px; 
+  }
+  
+  .movie-name:hover {
+    background-color: #f0f0f0;
+  }
+  

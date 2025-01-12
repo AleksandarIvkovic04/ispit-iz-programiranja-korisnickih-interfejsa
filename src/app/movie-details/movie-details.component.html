@@ -1,0 +1,40 @@
+<div *ngIf="movie" class="movie-details-container">
+  
+  <div class="movie-info">
+    <h2>{{ movie.name }}</h2>
+    <p><strong>Genre:</strong> {{ movie.genre }}</p>
+    <p><strong>Release Date:</strong> {{ movie.date_of_release }}</p>
+    <p><strong>Director:</strong> {{ movie.movieDirector }}</p>
+    <p><strong>Actors:</strong> {{ movie.actors.join(', ') }}</p>
+    <p><strong>Description:</strong> {{ movie.description }}</p>
+
+    <h3>Select a projection:</h3>
+    <div *ngIf="movie.projection && movie.projection.length > 0">
+     
+      <ul>
+        <li *ngFor="let projection of movie.projection">
+          <label>
+            <input type="radio" name="projection" (change)="selectedProjection = projection">
+            {{ projection.date }} - ${{ projection.price }}
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!movie.projection || movie.projection.length === 0">
+      <p>No projections available.</p>
+    </div>
+
+    
+    <button (click)="buyTicket()" [disabled]="!selectedProjection">Buy Ticket</button>
+  </div>
+
+  
+  <div class="movie-image">
+    <img [src]="movie.imageUrl" alt="{{ movie.name }}" />
+  </div>
+</div>
+
+
+<div *ngIf="!movie">
+  <p>Movie not found!</p>
+</div>

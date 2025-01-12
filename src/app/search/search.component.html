@@ -1,0 +1,44 @@
+<div>
+  
+  <input type="text" [(ngModel)]="filters.name" placeholder="Search by name" />
+
+  
+  <select [(ngModel)]="filters.genre">
+    <option value="">Select Genre</option>
+    <option value="Action">Action</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Drama">Drama</option>
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Horror">Horror</option>
+  </select>
+
+  
+  <input type="text" [(ngModel)]="filters.date_of_release" placeholder="Search by release date (YYYY-MM-DD)" />
+
+  
+  <input type="text" [(ngModel)]="filters.movieDirector" placeholder="Search by director" />
+
+  
+  <input type="text" [(ngModel)]="filters.actors" placeholder="Search by actor" />
+
+  
+  <input type="number" [(ngModel)]="filters.duration" placeholder="Search by duration (minutes)" />
+
+  
+  <input type="number" [(ngModel)]="filters.averageRating" placeholder="Search by average rating (>= value)" />
+
+  
+  <input type="date" [(ngModel)]="filters.projectionDate" placeholder="Search by projection date" />
+
+  
+  <input type="number" [(ngModel)]="filters.price" placeholder="Search by ticket price" />
+
+  <button (click)="searchMovies()">Search</button>
+</div>
+
+<div class="movies-grid">
+  <div *ngFor="let movie of movies" class="movie-item">
+    <img [src]="movie.imageUrl" alt="{{ movie.name }}" class="movie-image" />
+    <button [routerLink]="['/movie', movie.name]" class="movie-name">{{ movie.name }}</button>
+  </div>
+</div>

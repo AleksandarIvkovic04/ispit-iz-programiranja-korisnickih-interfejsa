@@ -1,0 +1,13 @@
+.singup-form {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.singup-form h1 {
+    color: white; 
+}
+
+.width-full {
+    width: 100%;
+}

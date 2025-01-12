@@ -1,0 +1,36 @@
+.ticket-card {
+  margin-bottom: 15px;
+  background-color: #1e1e1e; 
+  color: white; 
+}
+
+.ticket-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.ticket-details {
+  display: flex;
+  gap: 20px; 
+}
+
+.ticket-image {
+  width: 100px; 
+  height: 150px; 
+  object-fit: cover; 
+}
+
+.ticket-info {
+  flex: 1; 
+}
+
+button {
+  margin-top: 10px; 
+}
+
+button:hover {
+  background-color: #555; 
+}
+
+

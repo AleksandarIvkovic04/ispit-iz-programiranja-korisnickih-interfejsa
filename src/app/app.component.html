@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span><a>MOVIES</a></span>
+  <a routerLink="/" mat-button>HOME</a>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/search">
+    <mat-icon fontIcon="search"></mat-icon>
+  </a>
+  
+  <a routerLink="/profile" mat-button *ngIf="userService.hasCurrentUser(); else profile">profile</a>
+
+</mat-toolbar>
+<router-outlet />
+
+<ng-template #profile>
+  <a routerLink="/login" mat-button>login</a>
+</ng-template>

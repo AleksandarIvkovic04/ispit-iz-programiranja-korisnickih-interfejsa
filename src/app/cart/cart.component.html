@@ -1,0 +1,31 @@
+<div *ngIf="cartItems.length > 0">
+  <mat-card *ngFor="let ticket of cartItems" class="ticket-card" appearance="outlined">
+    <mat-card-content class="ticket-content">
+      <div class="ticket-details">
+        <img [src]="ticket.movieImageUrl" alt="{{ ticket.movieName }}" class="ticket-image" />
+        <div class="ticket-info">
+          <p><strong>Movie:</strong> {{ ticket.movieName }}</p> 
+          <p><strong>Genre:</strong> {{ ticket.movieGenre }}</p> 
+          <p><strong>Director:</strong> {{ ticket.movieDirector }}</p> 
+          <p><strong>Actors:</strong> {{ ticket.movieActors?.join(', ') }}</p> 
+          <p><strong>Description:</strong> {{ ticket.movieDescription }}</p> 
+          <p><strong>Date:</strong> {{ ticket.projection.date }}</p>
+          <p><strong>Price:</strong> {{ ticket.projection.price }} EUR</p>
+          <p><strong>Status:</strong> {{ ticket.status }}</p>
+
+          
+          <button *ngIf="ticket.status !== 'cancelled'" mat-button (click)="cancelTicket(ticket)">
+            Cancel Ticket
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+ <!-- <div class="total">
+    <p><strong>Total:</strong> {{  }} EUR</p>
+  </div> -->
+  
+<ng-template #noTickets>
+  <p>No tickets in your cart.</p>
+</ng-template>
